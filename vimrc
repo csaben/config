@@ -13,6 +13,9 @@ vnoremap <S-TAB> <gv
 "turn on line numbering
 set number
 
+"fix python indent issue
+filetype indent on
+
 set cursorline
 
 set tabstop=4
@@ -26,9 +29,8 @@ set tabstop=4
 "expandtab is if you like spaces (finlayson does which is why he keeps it on)
 set expandtab
 "this is fine, it just keeps your indentation level until you manually break it off
-set autoindent
+"set autoindent
 
-set smartindent
 filetype plugin on
 autocmd FileType python setlocal noexpandtab shiftwidth=4 softtabstop=4
 
