@@ -2,6 +2,22 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+
+
+TMUX_CONFIG="~/.tmux.conf"
+
+#TMUX related aliases
+alias                                   \
+    tn="tmux -u -f $TMUX_CONFIG new"    \
+    ta="tmux -u -f $TMUX_CONFIG attach" \
+    tt="vim $TMUX_CONFIG"               \
+    vj="vim vj"                         \
+    vimrc="vim ~/.vimrc"                \
+    bashrc="vim ~/.bashrc"              \
+    
+
+
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -134,3 +150,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="/home/arelius/make:$PATH"
