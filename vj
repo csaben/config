@@ -1,0 +1,71 @@
+# Current Vim Goals
+
+{open from anywhere with either vj or  vim ~/vj}
+
+## Annoyed With
+    
+    > Slow Movement (hjkl)
+    > no fzf , tmux, coc, or prime vimgame
+
+## Experimenting With
+
+    > relative lines in vimrc (:{line-number to jump to, which is curr+relative)
+    > relative lines navigation
+    > using dw, b, w for navigation in line
+    > using tmux even if it sucks (might want to change binding for opening panes)
+
+## Researching
+
+    >prime video practice #1 and #2
+    https://www.youtube.com/watch?v=H3o4l4GVLW0&t=6s
+    >add twitch chat in tmux with the code in this YT vid
+    https://www.youtube.com/watch?app=desktop&v=Z6sEEbwngd0&ab_channel=Beginbot
+    >more customizations to speed up my tmux workflow
+
+    >primes vimrc and tmux respectively
+    https://github.com/ThePrimeagen/.dotfiles/blob/master/nvim/.config/nvim/init.vim
+    https://github.com/ThePrimeagen/.dotfiles/blob/master/tmux/.tmux.conf
+
+## Low hanging fruit 
+    >autocomplete plugin (coc) setup
+    >use o to go into insert mode for the line above cursor
+    >shift o to go into insert mode a line above cursor
+    >lower case v for inplace line highlight
+    >yy to grab current line
+    >p for paste line below
+    >shift-i to go the first character of the line (in insert mode)
+    >/ goes into search mode ( * goes forward in search, # goes backward in search
+    >f jumps to the character
+    >t jumps to the character but not on top of it
+    >shift-f and shift-t find in the reverse direction
+    >use ; to move forwards in results and , to go backward
+    >x deletes a single character
+    >s deletes a single character and goes into insert mode
+    >use c-w it will delete the word and then go into insert mode
+    >shift-d will delete the contents of the rest of the line from where the cursor is
+    >shift-c will delete the rest of the line from the cursor and go back into insert mode, properly indented (noice)
+    > { and } to move up and down paragraph blocks, respectively
+
+## Effortful fruit 
+    
+    >customize window movement with vim and alt-tab / numbers (no more mousey)
+    https://i3wm.org/docs/userguide.html
+
+    >set up relaying stream to the bottom part of terminal (togglable)
+    https://github.com/davidbegin/chat_thief/blob/master/chat_thief/chat_logs.py
+    
+    >build nvim from source and transfer over old movements
+    [not rn]
+    
+    >setup config for nvim in github
+    [not rn]
+
+#log 1 : june 6 22
+# accomplished today
+
+    >tmux setup (see tmux-instructions if you get confused)
+    >fzf setup (ctrl-p for access; :Buffer for buffers and shift hjkl for scrolling)
+
+##webpage notes
+add browser bear
+use js and old readme that i zipped locally from the old csaben.github.i
