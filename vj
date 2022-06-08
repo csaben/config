@@ -27,6 +27,11 @@
     https://github.com/ThePrimeagen/.dotfiles/blob/master/tmux/.tmux.conf
 
 ## Low hanging fruit 
+    >fix the vj thing
+    >in tmux; fix the double tab to get the caps/esc to work
+    >auto enter ml env in tmux
+    >fix tmux scearching the cat output in terminal
+
     >autocomplete plugin (coc) setup
     >use o to go into insert mode for the line above cursor
     >shift o to go into insert mode a line above cursor
@@ -47,6 +52,8 @@
     > { and } to move up and down paragraph blocks, respectively
 
 ## Effortful fruit 
+    
+    >setup the tmux default session'd windows (current working directories, etc)
     
     >customize window movement with vim and alt-tab / numbers (no more mousey)
     https://i3wm.org/docs/userguide.html

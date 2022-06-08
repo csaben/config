@@ -1,4 +1,4 @@
-"VIM NOTES: https://vimhelp.org/vim_faq.txt.html#faq-15.6
+"VIM NOTS: https://vimhelp.org/vim_faq.txt.html#faq-15.6
 " ctrl-v , select a region, shift-> to indent, gv to reselect same regioni
 " more gems in that URL
 
@@ -30,6 +30,29 @@ set tabstop=4
 set expandtab
 "this is fine, it just keeps your indentation level until you manually break it off
 "set autoindent
+
+"primeagen add
+set noerrorbells
+set nowrap
+set incsearch
+set scrolloff=8
+set signcolumn=yes
+set relativenumber
+set nu
+
+call plug#begin('~/.vim/plugged')
+"Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-telescope/telescope.nvim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+nnoremap <C-p> :Files<Cr>
+let g:fzf_layout = { 'down': '40%'}
+
+let mapleader = " "
+"nnoremap <leader>ps :lua require('telescope.builitin').grep_string({ search = vim.fn.input("Grep for > ")})
 
 filetype plugin on
 autocmd FileType python setlocal noexpandtab shiftwidth=4 softtabstop=4
