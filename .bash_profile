@@ -5,5 +5,10 @@ export EDITOR="vim"
 echo "Ozriel has landed"
 
 #swap caps lock and esc
-setxkbmap -option caps:swapescape
+#setxkbmap -option caps:swapescape
 
+#make tmux not suck
+source ~/.bashrc
+
+#conda activate ml
+conda activate mining #this week
