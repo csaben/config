@@ -18,6 +18,8 @@ Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'vim-scripts/indentpython.vim'
 Plug 'windwp/nvim-autopairs' " alternative autopair customizable file effect
 "https://github.com/windwp/nvim-autopairs
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 :lua require('telescope')
@@ -95,12 +97,12 @@ au BufNewFile,BufRead *.py
     " \ set autoindent |
 "let g:ale_linters = {'python': ['flake8']}
 "-----Status-line----
-set statusline=
-set statusline+=%#PmenuSel#
-set statusline+=\ %M "tells you what you've changed since entering buffer
-set statusline+=\ %y "tells you the file type you are in
-set statusline+=\ %r
-set statusline+=\ %F
-set statusline+=%= "Right side settings
-set statusline+=\ %p%%
+"set statusline=
+"set statusline+=%#PmenuSel#
+"set statusline+=\ %M "tells you what you've changed since entering buffer
+"set statusline+=\ %y "tells you the file type you are in
+"set statusline+=\ %r
+"set statusline+=\ %F
+"set statusline+=%= "Right side settings
+"set statusline+=\ %p%%
 
