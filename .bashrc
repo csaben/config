@@ -4,19 +4,24 @@
 
 #export DISPLAY=:0
 
+set -o vi
+
 TMUX_CONFIG="~/.tmux.conf"
 
 #TMUX related aliases
-alias                                   \
-    tn="tmux -u -f $TMUX_CONFIG new"    \
-    ta="tmux -u -f $TMUX_CONFIG attach" \
-    tt="vim ~/.$TMUX_CONFIG"            \
-    vj="vim ~/vj"                       \
-    vimrc="vim ~/.vimrc"                \
-    bashrc="vim ~/.bashrc"              \
-    vim="nvim"                          \
-    dev="~/dev.sh"                      \
-    tm="~/tm.sh"                        \
+alias                                                 \
+    tn="tmux -u -f $TMUX_CONFIG new"                  \
+    ta="tmux -u -f $TMUX_CONFIG attach"               \
+    tt="vim ~/.$TMUX_CONFIG"                          \
+    vj="vim ~/vj"                                     \
+    vimrc="vim ~/.vimrc"                              \
+    bashrc="vim ~/.bashrc"                            \
+    vim="nvim"                                        \
+    dev="~/dev.sh"                                    \
+    tm="~/tm.sh"                                      \
+    glog="git log --decorate --oneline --graph --all" \
+    oz='bash ~/.ssh/oz.sh' 		              \
+    cav='bash ~/.ssh/cav.sh' 			      \
     
 
 

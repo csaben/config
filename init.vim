@@ -20,10 +20,25 @@ Plug 'windwp/nvim-autopairs' " alternative autopair customizable file effect
 "https://github.com/windwp/nvim-autopairs
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ThePrimeagen/harpoon'
 call plug#end()
 
 :lua require('telescope')
+"require("telescope").load_extension('harpoon')
 
+"nnoremap <leader>j :lua require("harpoon.tmux").toggle_quick_menu()<CR>
+nnoremap <leader>m :lua require("harpoon.mark").add_file()<CR>
+nnoremap <leader>j :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <leader>l :lua require("harpoon.ui").nav_next()<CR>   
+"                -- navigates to next mark
+nnoremap <leader>k:lua require("harpoon.ui").nav_prev()<CR>   
+"                -- navigates to previous mark
+
+lua << EOF
+require("nvim-autopairs").setup ({
+  disable_filetype = { "TelescopePrompt", "vim"},
+})
+EOF
 " ------------------------- Plugins Settings -------------------------------
 let mapleader = " " "shift space
 
@@ -51,7 +66,12 @@ let g:NERDTreeDirArrowCollapsible="~"
 colorscheme nord
 "colorscheme desert
 " ----Preference----
+"set foldmethod=indent
+set foldlevel=99
+nnoremap <leader>g za
+filetype plugin indent on
 set noerrorbells
+set scrolloff=8
 set nowrap
 set incsearch
 set signcolumn=yes
@@ -67,6 +87,7 @@ set hls is "highlights word as typed in search
 set undofile "set undodir=~/.vim/undodir
 set undodir=~/undodir
 set mouse=a
+set foldmethod=manual " <leader>zf + #jk to make and <leader>g to open
 "----Indentation----
 "set tabstop=4
 "set shiftwidth=4
