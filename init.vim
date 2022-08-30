@@ -11,8 +11,60 @@ ab javat <ESC>:set paste<CR>ipublic class <C-R>=expand("%:t:r")<CR> {<CR>    pub
 " auto generates the boilerplate for a print statement |sop
 ab sop System.out.println
 ab sopf System.out.printf
+
+" -------------------------- jupyter experiments ------------------------
+
+" Goal: Ultimately this will become my kaggle workspace from the terminal
+" Progress: Works as intended(save auto sync ipynb), but requires legwork,
+" 	    Markdown cells and Code cell rendering is straightforward
+
+" This works fine; just would be nice if the syncing didn't require me to 
+" do any legwork for every time I change a file
+
+" generate the pair of py and ipynb (this would need to be aliased in bashrc)
+" python -m jupyter_ascending.scripts.make_pair --base
+
+" still needs to reference the current file name while <ESC> in vim buffer or
+" OR potentially just alias it and only sync at the end of a work session for
+" upload or to get a sneak peak at progress
+" !python -m jupyter_ascending.requests.sync --filename NAME.sync.py
+
+" if you download a notebook and want to convert it (jupytext: https://jupytext.readthedocs.io/en/latest/using-cli.html)
+" ALIAS this one
+" jupytext --set-formats ipynb,py NAME.ipynb
+
+" Final wishlist item is code block navigation via cell like done here:
+" https://richban.tech/python-jupyter-notebooks-development-in-neo-vim
+
+" Sources
+" Jupytext: https://github.com/mwouts/jupytext/blob/main/docs/formats.md#The-percent-format
+" Jupyter Ascending: https://github.com/untitled-ai/jupyter_ascending
+" Blog post 1: https://richban.tech/python-jupyter-notebooks-development-in-neo-vim
+" Blog post 2: https://maxwellrules.com/misc/nvim_jupyter.html
+" Blog post 3: https://expectationmax.github.io/2018/Neovim-pipenv-based-development-environment/
+" Cool alternative; Magma: https://github.com/dccsillag/magma-nvim
+
+" ------------------------- ml shortcuts abusing ab ------------------------------
+" boiler plate def main() and if __name__ == '__main__':
+ab mainf <ESC>:set paste<CR>idef main():<CR><Tab>pass<CR><CR><ESC>:retab<CR><ESC>:normal G<ESC>A<CR><CR><CR>if __name__ == '__main__':<CR><Tab>main()<ESC>:retab<CR><ESC>:''<CR><ESC><ESC>:set nopaste<CR><ESC>:retab<CR>?!<CR>cf!
+
+" tf keras imports and silencing tf errors w/ os.environ ; this does assume
+" you are at the spot you wanna to put your imports 
+ab importf <ESC>:set paste<CR>iimport os<CR>os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'<CR>import warnings<CR>warnings.filterwarnings('ignore')<CR><CR>import tensorflow as tf<CR>from tensorflow import keras<CR>import numpy as np<CR>import pandas as pd<CR><ESC>:set nopaste<CR>?!<CR>cf!
+
+" warnings.filterwarnings('ignore')
+" boiler plate eda of a numpy array
+
+" boiler plate keras functional model
+
+
+
+
 " ------------------------- Plugins ------------------------------
 call plug#begin('~/.config/nvim/plugged')
+
+Plug 'untitled-ai/jupyter_ascending.vim'
+
 Plug 'mfussenegger/nvim-dap'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'mfussenegger/nvim-dap-python'
@@ -34,8 +86,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ThePrimeagen/harpoon'
 Plug 'bfredl/nvim-miniyank'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
+
+
+" If you have nodejs and yarn
 call plug#end()
 " ---------------------Plugins that need removal------------------------
 "https://github.com/windwp/nvim-autopairs
@@ -44,9 +100,13 @@ call plug#end()
 "Plug 'dense-analysis/ale'
 " ---------------------Plugin Settings-----------------------------------
 
+nmap LK <Plug>JupyterExecute
+
 " ---------------------Markdown Settings---------------------------------
 let g:mkdp_refresh_slow=1
 let g:mkdp_markdown_css='~/github_markdown.css'
+map N :MarkdownPreview
+"map N <Plug>MarkdownPreview
 
 " ---------------------Telelscope Settings-------------------------------
 :lua require('telescope')
