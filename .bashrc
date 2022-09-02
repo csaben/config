@@ -4,7 +4,11 @@
 
 #export DISPLAY=:0
 
+export GOOGLE_APPLICATION_CREDENTIALS="~/Downloads/ai-doc-test-358020-4ab272d54b21.json"
+#
+export DISPLAY=localhost:0.0
 set -o vi
+tmux source-file ~/.tmux.conf
 
 TMUX_CONFIG="~/.tmux.conf"
 
@@ -22,7 +26,12 @@ alias                                                 \
     glog="git log --decorate --oneline --graph --all" \
     oz='bash ~/.ssh/oz.sh' 		              \
     cav='bash ~/.ssh/cav.sh' 			      \
-    
+    c='clear'                                         \
+    s='bash ~/tmux-sessionizer.sh'                    \
+    jup='bash ~/jup.sh'                               \
+    jupmd='bash ~/jupmd.sh'                           \
+    jpair='bash ~/jpair.sh'                           \
+    jn='jupyter notebook'                             \
 
 
 
