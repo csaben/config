@@ -1,0 +1,172 @@
+{
+  // https://stackoverflow.com/a/50875402
+  "keyboard.dispatch": "keyCode",
+  "workbench.startupEditor": "none",
+  "editor.fontWeight": "normal",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+      "source.fixAll": true,
+    },
+  },
+  "isort.args": [
+    "--profile",
+    "black"
+  ],
+  "html.format.contentUnformatted": "",
+  "editor.inlineSuggest.enabled": true,
+  "editor.formatOnSave": true,
+  "json.schemas": [
+    
+  ],
+  "autoDocstring.docstringFormat": "sphinx",
+  "workbench.colorTheme": "Nord",
+  // preferences
+  "vim.leader": "<space>",
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "none",
+  "editor.cursorStylePerMode.insert": "Block",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+  },
+  // keybindings
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "i"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.terminal.focus",
+        }
+      ]
+    },
+    // bring editor into focus
+    {
+      "before": [
+        "<leader>",
+        "u"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusActiveEditorGroup",
+        }
+      ]
+    },
+    // double allocate workbench.action.quickOpen
+    {
+      "before": [
+        "<leader>",
+        "p"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.quickOpen",
+        }
+      ]
+    },
+    // 
+    {
+      "before": [
+        "<leader>",
+        "o"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.quickOpen",
+        }
+      ]
+    },
+    // toggle terminal in and out
+    {
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.terminal.toggleTerminal",
+        }
+      ]
+    },
+    // split editor
+    {
+      "before": [
+        "<leader>",
+        "v"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditor",
+        }
+      ]
+    },
+    // focus on first editor group
+    {
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusFirstEditorGroup",
+        }
+      ]
+    },
+    // focus on second editor group
+    {
+      "before": [
+        "<leader>",
+        "l"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusSecondEditorGroup",
+        }
+      ]
+    },
+    // you search for somethin and want to remove the highlight after
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": ":nohl",
+        }
+      ]
+      // that is the end of the file
+    }
+  ],
+  "editor.accessibilitySupport": "off",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "audioCues.lineHasError": "off",
+  "markdown-preview-enhanced.previewTheme": "github-dark.css",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "window.zoomLevel": -3,
+}
